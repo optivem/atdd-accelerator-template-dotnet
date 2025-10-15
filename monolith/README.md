@@ -31,3 +31,6 @@ To run:
 ```shell
 dotnet run --urls "http://localhost:8080"
 ```
+
+App should now be running on:
+http://localhost:8080/

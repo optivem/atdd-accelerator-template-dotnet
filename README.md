@@ -8,7 +8,9 @@
 
 ## License
 
-MIT License
+[![CC0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/cc0/1.0/)
+
+This project is released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/cc0/1.0/) - Public Domain Dedication.
 
 ## Contributors
 

@@ -14,5 +14,5 @@ This project is released under [CC0 1.0 Universal](https://creativecommons.org/p
 
 ## Contributors
 
-- [Valentina Jemuović](https://www.linkedin.com/in/valentinajemuovic/)
-- [Jelena Cupać](https://www.linkedin.com/in/jelenacupac/)
+- [Valentina Jemuović](https://github.com/valentinajemuovic)
+- [Jelena Cupać](https://github.com/jcupac)

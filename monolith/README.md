@@ -29,7 +29,7 @@ dotnet build
 To run:
 
 ```shell
-dotnet run --urls "http://localhost:8080"
+dotnet run
 ```
 
 App should now be running on:

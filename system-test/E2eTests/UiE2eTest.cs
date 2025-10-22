@@ -36,10 +36,10 @@ namespace Optivem.AtddAccelerator.Template.SystemTest.E2eTests
             var todoResult = page.Locator("#todoResult");
             await todoResult.WaitForAsync(new LocatorWaitForOptions { Timeout = 10000 });
             
-            var resultText = await todoResult.TextContentAsync();
+            // Wait for the actual content to load (not just "Loading...")
+            await Assertions.Expect(todoResult).ToContainTextAsync("ID", new() { Timeout = 10000 });
             
-            // Debug: Print the actual result text
-            Console.WriteLine($"Actual result text: {resultText}");
+            var resultText = await todoResult.TextContentAsync();
             
             Assert.NotNull(resultText);
 

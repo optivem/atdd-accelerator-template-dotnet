@@ -41,19 +41,23 @@ namespace Optivem.AtddAccelerator.Template.SystemTest.E2eTests
             // Debug: Print the actual result text
             Console.WriteLine($"Actual result text: {resultText}");
             
-            // Verify the todo data is displayed (more flexible checking)
-            Assert.True((resultText.Contains("userId") || resultText.Contains("User ID")) && 
-                       (resultText.Contains("1") || resultText.Contains(": 1")), 
-                       $"Result should contain userId: 1. Actual text: {resultText}");
-            Assert.True((resultText.Contains("\"id\"") || resultText.Contains("ID:")) && 
-                       (resultText.Contains("4") || resultText.Contains(": 4")), 
-                       $"Result should contain id: 4. Actual text: {resultText}");
-            Assert.True(resultText.Contains("title", StringComparison.OrdinalIgnoreCase) || 
-                       resultText.Contains("Title"), 
-                       $"Result should contain title field. Actual text: {resultText}");
-            Assert.True(resultText.Contains("completed", StringComparison.OrdinalIgnoreCase) || 
-                       resultText.Contains("Completed"), 
-                       $"Result should contain completed field. Actual text: {resultText}");
+            Assert.NotNull(resultText);
+
+            // Verify the todo data is displayed with correct values
+            Assert.Contains("ID", resultText);
+            Assert.Contains("User ID", resultText);
+            Assert.Contains("Title", resultText);
+            Assert.Contains("Completed", resultText);
+
+            // Verify the specific values
+            Assert.True(resultText.Contains("ID") && resultText.Contains("4"), 
+                       $"Result should contain 'ID' with value 4. Actual text: {resultText}");
+            Assert.True(resultText.Contains("User ID") && resultText.Contains("1"), 
+                       $"Result should contain 'User ID' with value 1. Actual text: {resultText}");
+            Assert.True(resultText.Contains("Title") && !string.IsNullOrWhiteSpace(resultText), 
+                       $"Result should contain 'Title' with a value. Actual text: {resultText}");
+            Assert.True(resultText.Contains("Completed") && (resultText.Contains("Yes") || resultText.Contains("No")), 
+                       $"Result should contain 'Completed' with Yes or No. Actual text: {resultText}");
             
             await browser.CloseAsync();
         }

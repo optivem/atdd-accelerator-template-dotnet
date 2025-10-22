@@ -45,7 +45,7 @@
                         <strong>User ID:</strong> @Model.TodoResult.UserId<br/>
                         <strong>ID:</strong> @Model.TodoResult.Id<br/>
                         <strong>Title:</strong> @Model.TodoResult.Title<br/>
-                        <strong>Completed:</strong> @Model.TodoResult.Completed
+                        <strong>Completed:</strong> @(Model.TodoResult.Completed ? "Yes" : "No")
                     </div>
                 </div>
             </div>
